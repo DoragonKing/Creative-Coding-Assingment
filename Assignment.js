@@ -1,6 +1,6 @@
 
 
-
+//this is all experimentation at the moment and figuring out what sort of thing i wanna do
 function setup(){
 createCanvas(594,841, WEBGL)
 frameRate(10)
@@ -35,9 +35,10 @@ function draw(){
 rect(posX-posX2,posY-posY2,sizeX+10,sizeY+10)
 fill(255)
 ellipse(random(30),random(30),30,30)
+//there was an attempt to make multiple rectangles.
+rect(mouseX-width/2,mouseY-height/2,30,30)
 
 
-
-noLoop();
+//noLoop();
 
 }
