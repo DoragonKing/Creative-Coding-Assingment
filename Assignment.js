@@ -1,44 +1,55 @@
+var click=0;
+let posx;
+let posy;
+var colour;
+function setup () {
+  strokeWeight(1);
+  createCanvas(1000,1000);
+  frameRate(100)
+background(0);
+for(let x=0;x<10;x=x+1){
+  fill(random(255),random(255),random(255))
+  posx=random(width);
+  posy=random(height);
 
-
-//this is all experimentation at the moment and figuring out what sort of thing i wanna do
-function setup(){
-createCanvas(594,841, WEBGL)
-frameRate(10)
+  rect(posx,posy,100,100);}
 }
-function draw(){
-//The following variable lines are for the position and size of the shapes
-//to get the the cordinates to be either positive negative had to have 2
-//seperate values.
-  var posX = random(width/2);
-  var posY = random(height/2);
-  var posX2 = random(width/2);
-  var posY2 = random(height/2);
-  var sizeX = random(50);
-  var sizeY = random(50);
-  //sets background colour to a shade of grey
-  background(123);
-//random will have random values inbetween 0 and the max value thats been inputed
-  var colourR = random(255);
-  var colourG = random(255);
-  var colourB = random(255);
-  fill(colourR,colourG,colourB);
 
-//put the buttome code as string to keep it off for now
-//  translate(mouseX-width/2,mouseY-height/2)
-  sphere(sizeX,20,20)
-
-  rect(200,200,30,30)
-
-
-//have now realised can just inser "random" into the values
-
-rect(posX-posX2,posY-posY2,sizeX+10,sizeY+10)
-fill(255)
-ellipse(random(30),random(30),30,30)
-//there was an attempt to make multiple rectangles.
-rect(mouseX-width/2,mouseY-height/2,30,30)
-
-
-//noLoop();
+function draw () {
+  if(colour==0){
+  fill(0,255,0)
 
 }
+else{
+  fill(random(255),random(255),random(255))
+}
+  if(colour==1){
+    fill(255,0,0)
+  }
+
+noStroke();
+
+  if(click==1){
+    rect(mouseX,mouseY,30,30)
+  }
+
+}
+
+
+
+function mousePressed(){
+  click=click+1
+}
+
+function mouseReleased(){
+  click=click-1
+}
+
+function keyPressed(){
+  if(key=='1')colour=0
+  if(key=='2')colour=1
+  if(key=='0')colour=100
+}
+
+//for the loop criteria instead of only having 1 shape everytime you click, have a line of shapes.
+//
