@@ -1,35 +1,47 @@
 var click=0;
 let posx;
 let posy;
-let r1;
+let r2;
 let g2;
 let b2;
-
-var r=[255,30,150,100,0];
-var g=[0,200,150,100,0];
-var b=[0,0,255,255,0];
+let size=30;
+var colour={
+ r:[255,30,150,255,0],
+ g:[0,200,150,0,0],
+ b:[0,0,255,255,0]};
+ var cname=['Colour1','Colour2','Colour3','Colour4','Rainbow']
 var index=0
 
 function setup () {
   strokeWeight(1);
-  createCanvas(1000,1000);
+  createCanvas(600,600);
   frameRate(100);
 background(0);
+
 }
 
 function draw () {
-fill(r[index],g[index],b[index]);
+fill(0)
+rect(0,0,160,40)
+
+  strokeWeight(1);
+  textSize(30);
+  fill(255);
+  text(cname[index],12,30);
+
+fill(colour.r[index],colour.g[index],colour.b[index]);
 noStroke();
 if(index==4){
- r1=random(255);
+ r2=random(255);
  g2=random(255);
  b2=random(255);
-  fill(r1,g2,b2);
+ fill(r2,g2,b2);
 }
 
   if(click==1){
-    ellipse(mouseX,mouseY,30,30)
+    ellipse(mouseX,mouseY,size,size)
   }
+
 
 }
 
@@ -44,9 +56,21 @@ function mouseReleased(){
 }
 
 function keyPressed(){
+
 index=index+1
-if(index>4){index=0}
+if(index==colour.r.length){index=0}
 }
 
+function mouseWheel(event){
+  var movement=event.delta
+if(movement<-1){movement=movement+115}
+if(movement>+1){movement=movement-115}
+size=movement+size
+  console.log(size)
+  if(size<15){
+    size=10
+  }
+
+}
 //for the loop criteria instead of only having 1 shape everytime you click, have a line of shapes.
 //
