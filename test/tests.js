@@ -1,9 +1,14 @@
+var xoff=0;
 function setup(){
-createCanvas(594,841, WEBGL)
+createCanvas(500,500);
+background(0);
 
 }
-function draw(){
 
-rect(mouseX,mouseY,30,30)
+function draw(){
+  background(0)
+  x=map(noise(xoff),0,1,0,width);
+  xoff+=0.01
+ellipse(x,250,30);
 
 }
