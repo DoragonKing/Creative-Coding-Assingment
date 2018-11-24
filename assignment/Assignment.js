@@ -14,6 +14,7 @@ var colour={
 var index=0;
 var xoff=0;
 //var s;
+//the x value of where to pick up the value for the perlin noise
 var yoff1=0;
 var yoff2=200;
 var yoff3=600;
@@ -26,11 +27,12 @@ var col3;
 function setup () {
   strokeWeight(1);
   createCanvas(600,600);
-  frameRate(100);
+  frameRate(300);
 background(0);
 }
 
 function draw () {
+  //maps the perlin noise value to RGB
   var col1= map(noise(yoff1),0,1,0,255);
   var col2= map(noise(yoff2),0,1,0,255);
   var col3= map(noise(yoff3),0,1,0,255);
@@ -62,6 +64,7 @@ if(index==4){
   if(click==1){
     ellipse(mouseX,mouseY,size)
   //  xoff+=0.01
+  //this is so that the the colours keep changing
     yoff1+=0.02
     yoff2+=0.02
     yoff3+=0.02

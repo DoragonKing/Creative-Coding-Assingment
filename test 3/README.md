@@ -1,3 +1,4 @@
 # Creative Coding Assingment
-Was going to try and do some sort of night sky rotation, gave up on it seemed complicated and
-isn't what I initially wanted
+Attempted to do a starry night and have it rotate leaving a trail behind
+of random colours. Struggled to have it rotate and leave a trail so I left it.
+This is an extension of test 2.
