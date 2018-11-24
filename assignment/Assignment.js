@@ -6,11 +6,12 @@ let r2;
 let g2;
 let b2;
 let size=30;
+//the colour arrays so they're grouped together
 var colour={
  r:[255,30,150,255,0,0],
  g:[0,200,150,0,0,0],
  b:[0,0,255,255,0,0]};
- var cname=['Colour1','Colour2','Colour3','Colour4','Rainbow','Black/Erase']
+var cname=['Colour1','Colour2','Colour3','Colour4','Rainbow','Black/Erase']
 var index=0;
 var xoff=0;
 //var s;
@@ -23,7 +24,8 @@ var col2;
 var col3;
 
 
-
+//this sets up the canvas, the bacckground function is in setup so you can see
+//what you are drawing
 function setup () {
   strokeWeight(1);
   createCanvas(600,600);
@@ -64,7 +66,7 @@ if(index==4){
   if(click==1){
     ellipse(mouseX,mouseY,size)
   //  xoff+=0.01
-  //this is so that the the colours keep changing
+  //this is so that the the colours keep changing only while you're clicking
     yoff1+=0.02
     yoff2+=0.02
     yoff3+=0.02
@@ -79,7 +81,7 @@ function mousePressed(){
 function mouseReleased(){
   click=0
 }
-/*The code here changes the colour, I have it so if any key is press the colour changes
+/*The code here changes the colour, I have it so if any key is pressed the colour changes
 and made sure that the colour doesn't change whenever I press 0 to clear the canvas*/
 function keyPressed(){
 if(key=='0'){background(0)}
